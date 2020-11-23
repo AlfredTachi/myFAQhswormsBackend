@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  myFAQhswormsBackend:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      FunctionName: myFAQhswormsBackend
+      Description: ''
+      Handler: index.handler
+      MemorySize: 128
+      Role: >-
+        arn:aws:iam::308282557602:role/service-role/myFAQhswormsBackend-role-ss1s27j9
+      Runtime: nodejs12.x
+      Timeout: 3
