@@ -27,7 +27,7 @@ let data = [];
             const submissionOfTheses = $('section[id="c21905"] > p').text().trim();
             const examReviews = $('section[id="c21906"] > p').text().trim();
             const examinationPhase = $('section[id="c21907"] > p').text().trim();
-            const periodOfStudy = $('section[id="c22762"] > p').text().trim();
+            const periodOfStudy = $('section[id="c22762"] > p').text().trim().replace(/\. ?/, '. ');
 
             data.push({
                 intro,
