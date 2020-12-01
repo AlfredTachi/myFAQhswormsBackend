@@ -8,7 +8,7 @@ const url = 'https://www.hs-worms.de/corona/faq-fuer-studierende'
 let data = [];
 
 // function to scraping data form web
-(() => {
+(function fetchData() {
     let data = [];
     request(url, (error, response, html) => {
 
@@ -44,10 +44,10 @@ let data = [];
                 periodOfStudy
             });
 
-            const dataText = JSON.stringify(data);
-            fs.writeFileSync('data.json', dataText);
+            const dataText = JSON.stringify(data, null, 2);
+            fs.writeFileSync('../assets/data.json', dataText);
         }
-        const dataJson = JSON.parse(fs.readFileSync('data.json', { encoding: 'utf-8' }));
+        const dataJson = JSON.parse(fs.readFileSync('../assets/data.json', { encoding: 'utf-8' }));
         console.log(dataJson);
     });
 
