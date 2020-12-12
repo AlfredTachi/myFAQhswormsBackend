@@ -1,6 +1,8 @@
 const Alexa = require('ask-sdk');
 const AWS = require('aws-sdk');
+const fs = require('fs');
 
+const dataJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
 
 const LaunchRequestHandler = {
     canHandle(handlerInput){
@@ -8,7 +10,7 @@ const LaunchRequestHandler = {
         
     },
     handle(handlerInput){
-        const speechOutput = 'Mamba test Willkommen bei den FAQs für Studierende der Hochschule Worms. Fragen rund ums Studium werden hier gesammelt, beantwortet und Ihnen zur Verfügung gestellt. Wir erweitern diese Liste ständig, so dass Sie schneller an nötige Antworten kommen.';
+        const speechOutput = 'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' + dataJson[0].intro;
 
         return handlerInput.responseBuilder
             .speak(speechOutput)
@@ -26,7 +28,7 @@ const TestIntentHandler = {
                 res.intent.name === 'TestIntent';
     },
     handle(handlerInput){
-        const speechOutput = 'Mamba';
+        const speechOutput = dataJson[0].periodOfStudy;
 
         return handlerInput.responseBuilder
             .speak(speechOutput)
