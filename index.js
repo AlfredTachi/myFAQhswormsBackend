@@ -1,6 +1,8 @@
 const Alexa = require('ask-sdk');
 const AWS = require('aws-sdk');
 const fs = require('fs');
+const util = require('./util')
+const aplHelper = require('./APL/aplHelper.js');
 
 const dataJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
 
@@ -10,13 +12,30 @@ const LaunchRequestHandler = {
         
     },
     handle(handlerInput){
-        const speechOutput = 'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' + dataJson[0].intro;
-
-        return handlerInput.responseBuilder
-            .speak(speechOutput)
-            .reprompt(HELP_REPROMPT)
-            .getResponse();
-
+        const data = require('./APL/data.json');
+        const template = require('./APL/template.json');
+        
+        console.log(dataJson);
+        
+        const speechOutput = 
+            'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
+            + dataJson[0].intro 
+            + ' Sie können zum Beispiel nach Informationen bezogen auf das Prakxis-semester fragen. '
+            + 'Oder fragen, wann das Semesterende ist.';
+            
+        if (aplHelper.supportsAPL(handlerInput)) {
+            return handlerInput.responseBuilder
+                .speak(speechOutput)
+                .reprompt(HELP_REPROMPT)
+                .addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    version: '1.1',
+                    document: template,
+                    token: 'FAQsHSwormsToken',
+                    datasources: data
+                })
+                .getResponse();
+        }
     }
 };
 
@@ -130,7 +149,8 @@ const ErrorHandler = {
 };
 
 const HELP_REPROMPT = 'wie kann ich dir helfen';
-const STOP_MESSAGE = 'Es war großartig, dir zu dienen. Auf Wiederhören!';
+const STOP_MESSAGE = 'FAQ Hochschule Worms wird beendet! Es war großartig, dir zu dienen. Auf Wiederhören!';
+
 
 const skillBuilder = Alexa.SkillBuilders.custom();
 
