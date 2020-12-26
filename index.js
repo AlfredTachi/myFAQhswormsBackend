@@ -1,7 +1,6 @@
 const Alexa = require('ask-sdk');
 const AWS = require('aws-sdk');
 const fs = require('fs');
-const util = require('./util')
 const aplHelper = require('./APL/aplHelper.js');
 
 const dataJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
@@ -12,16 +11,14 @@ const LaunchRequestHandler = {
         
     },
     handle(handlerInput){
-        const data = require('./APL/data.json');
-        const template = require('./APL/template.json');
-        
-        console.log(dataJson);
+        const data = require('./apl_data.json');
+        const template = require('./apl_template.json');
         
         const speechOutput = 
             'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
             + dataJson[0].intro 
             + ' Sie können zum Beispiel nach Informationen bezogen auf das Prakxis-semester fragen. '
-            + 'Oder fragen, wann das Semesterende ist.';
+            + 'Oder fragen, wie Sie die Prüfungsverwaltung erreichen können.';
             
         if (aplHelper.supportsAPL(handlerInput)) {
             return handlerInput.responseBuilder
@@ -47,7 +44,7 @@ const TestIntentHandler = {
                 res.intent.name === 'TestIntent';
     },
     handle(handlerInput){
-        const speechOutput = dataJson[0].periodOfStudy;
+        const speechOutput = ' Sie können die Prüfungsverwaltung per E-Mail. Unter pruefungsverwaltung. @. hs. -. worms.de. Oder unter der Telefonnummer 0  6  2  4  1  5  0  9  1  8  1 erreichen';
 
         return handlerInput.responseBuilder
             .speak(speechOutput)
