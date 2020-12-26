@@ -44,12 +44,23 @@ const TestIntentHandler = {
                 res.intent.name === 'TestIntent';
     },
     handle(handlerInput){
+        const data = require('./APL/contact_data.json');
+        const template = require('./APL/contact_template.json');
         const speechOutput = ' Sie können die Prüfungsverwaltung per E-Mail. Unter pruefungsverwaltung. @. hs. -. worms.de. Oder unter der Telefonnummer 0  6  2  4  1  5  0  9  1  8  1 erreichen';
 
-        return handlerInput.responseBuilder
-            .speak(speechOutput)
-            .reprompt(HELP_REPROMPT)
-            .getResponse();
+        if (aplHelper.supportsAPL(handlerInput)) {
+            return handlerInput.responseBuilder
+                .speak(speechOutput)
+                .reprompt(HELP_REPROMPT)
+                .addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    version: '1.1',
+                    document: template,
+                    token: 'FAQsHSwormsTokens',
+                    datasources: data
+                })
+                .getResponse();
+        }
     }
 };
 
