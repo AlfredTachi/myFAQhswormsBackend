@@ -34,7 +34,7 @@
                     "type": "Container",
                     "width": "100%",
                     "height": "100%",
-                    "item": [
+                    "items": [
                         {
                             "type": "Text",
                             "style": "textStyleDisplay5",
@@ -44,7 +44,7 @@
                             "color": "white",
                             "fontWeight": "800",
                             "textAlignVertical": "auto",
-                            "lineHeight": 3
+                            "lineHeight": 2
                         }
                     ]
                 }
