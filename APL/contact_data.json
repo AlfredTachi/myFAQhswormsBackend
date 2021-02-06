@@ -1,0 +1,10 @@
+{
+    "launchData": {
+        "properties": {
+            "headerTitle": "Kontakt:",
+            "mainText": "pruefungsverwaltung@hs-worms.de, 06241/509-181 studieren@hs-worms.de, 06241/509-180 bafoegamt@hs-worms.de, 06241/509-184 oder -309",
+            "hintString": "Versuchen Sie, Alexa, wann ist die Frist für die Rückmeldung zum Sommersemester 2021?",
+            "backgroundOpacity": "0.7"
+        }
+    }
+}
