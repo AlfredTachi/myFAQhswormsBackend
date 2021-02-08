@@ -3,7 +3,19 @@
 const Alexa = require('ask-sdk');
 const AWS = require('aws-sdk');
 const fs = require('fs');
+
 const aplHelper = require('./APL/aplHelper.js');
+var questionPossibility = require('./constants/questionPossibility.js')
+var randomizeFunction = require('./constants/randomizeFunction.js');
+
+const ProcessingTimesOfThesesIntentHandler = require('./intentHandlers/processingTimesOfTheses.js');
+const ConfirmationOfErolmentIntentHandler = require('./intentHandlers/confirmationOfErolment.js');
+const HelpIntentHandler = require('./intentHandlers/help.js');
+const CancelAndStopIntentHandler = require('./intentHandlers/cancelAndStop.js');
+const FallbackIntentHandler = require('./intentHandlers/fallback.js');
+const SessionEndedRequestHandler = require('./intentHandlers/sessionEndedRequest.js');
+const IntentReflectorHandler = require('./intentHandlers/intentReflector.js');
+const ErrorHandler = require('./intentHandlers/error.js');
 
 const HELP_REPROMPT = 'wie kann ich dir helfen';
 const STOP_MESSAGE = 'FAQ Hochschule Worms wird beendet! Es war großartig, Ihnen zu dienen. Auf Wiederhören!';
@@ -16,19 +28,21 @@ const LaunchRequestHandler = {
         
     },
     handle(handlerInput){
+        
         const data = require('./apl_data.json');
         const template = require('./apl_template.json');
         
         const speechOutput = 
-            'yo Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
+            'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
             + speechOutJson[0].intro 
             + ' Sie können zum Beispiel nach Informationen bezogen auf das Prakxis-semester fragen. '
-            + 'Oder fragen, wie Sie die Prüfungsverwaltung erreichen können.';
+            + 'Oder fragen, wie Sie die Prüfungsverwaltung erreichen können. '
+            + randomizeFunction(questionPossibility);
             
         if (aplHelper.supportsAPL(handlerInput)) {
             return handlerInput.responseBuilder
                 .speak(speechOutput)
-                .reprompt('wie kann ich dir helfen')
+                .reprompt(HELP_REPROMPT)
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     version: '1.1',
@@ -70,14 +84,7 @@ const ExamServiceContactIntentHandler = {
     }
 };
 
-const ProcessingTimesOfThesesIntentHandler = require('./intentHandlers/processingTimesOfTheses.js');
-const ConfirmationOfErolmentIntentHandler = require('./intentHandlers/confirmationOfErolment.js');
-const HelpIntentHandler = require('./intentHandlers/help.js');
-const CancelAndStopIntentHandler = require('./intentHandlers/cancelAndStop.js');
-const FallbackIntentHandler = require('./intentHandlers/fallback.js');
-const SessionEndedRequestHandler = require('./intentHandlers/sessionEndedRequest.js');
-const IntentReflectorHandler = require('./intentHandlers/intentReflector.js');
-const ErrorHandler = require('./intentHandlers/error.js');
+
 
 
 
