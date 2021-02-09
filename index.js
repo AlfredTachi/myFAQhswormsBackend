@@ -29,8 +29,8 @@ const LaunchRequestHandler = {
     },
     handle(handlerInput){
         
-        const data = require('./apl_data.json');
-        const template = require('./apl_template.json');
+        const data = require('./APL/launchData.json');
+        const template = require('./APL/launchTemplate.json');
         
         const speechOutput = 
             'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
@@ -62,8 +62,8 @@ const ExamServiceContactIntentHandler = {
                 res.intent.name === 'ExamServiceContactIntent';
     },
     handle(handlerInput){
-        const data = require('./APL/contact_data.json');
-        const template = require('./APL/contact_template.json');
+        const data = require('./APL/contactData.json');
+        const template = require('./APL/contactTemplate.json');
         const  speechOutput = speechOutJson[0].examServiceContact + randomizeFunction(questionPossibility);
         
         //const speechOutput = ' Sie können die Prüfungsverwaltung per E-Mail. Unter pruefungsverwaltung. @. hs. Bindestrich. worms.de. Oder unter der Telefonnummer 0  6  2  4  1  5  0  9  1  8  1 erreichen. Möchten Sie auch wissen, wie Sie auch Ihre Immatrikulationsbescheinigung bekommen können?';

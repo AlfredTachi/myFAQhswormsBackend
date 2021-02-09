@@ -9,7 +9,7 @@ var goodByeMessage = new Array (
     "good Bye Message 5",
     "good Bye Message 6",
     "good Bye Message 7",
-    "good By eMessage 8"
+    "FAQ Hochschule Worms wird beendet! Es war großartig, dir zu dienen. Auf Wiederhören!"
 
 );
 
