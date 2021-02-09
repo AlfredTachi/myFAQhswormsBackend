@@ -11,14 +11,14 @@ var randomizeFunction = require('./constants/randomizeFunction.js');
 const ProcessingTimesOfThesesIntentHandler = require('./intentHandlers/processingTimesOfTheses.js');
 const ConfirmationOfErolmentIntentHandler = require('./intentHandlers/confirmationOfErolment.js');
 const HelpIntentHandler = require('./intentHandlers/help.js');
+const RepeatIntentHandler = require('./intentHandlers/repeat.js');
+const saveResponseForRepeatingInterceptor = require('./intentHandlers/repeatingInterceptor.js');
 const CancelAndStopIntentHandler = require('./intentHandlers/cancelAndStop.js');
 const FallbackIntentHandler = require('./intentHandlers/fallback.js');
 const SessionEndedRequestHandler = require('./intentHandlers/sessionEndedRequest.js');
 const IntentReflectorHandler = require('./intentHandlers/intentReflector.js');
 const ErrorHandler = require('./intentHandlers/error.js');
 
-const HELP_REPROMPT = 'wie kann ich dir helfen';
-const STOP_MESSAGE = 'FAQ Hochschule Worms wird beendet! Es war großartig, Ihnen zu dienen. Auf Wiederhören!';
 const speechOutJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
 
 
@@ -35,14 +35,12 @@ const LaunchRequestHandler = {
         const speechOutput = 
             'Willkommen bei den FAQs für Studierende der Hochschule Worms. ' 
             + speechOutJson[0].intro 
-            + ' Sie können zum Beispiel nach Informationen bezogen auf das Prakxis-semester fragen. '
-            + 'Oder fragen, wie Sie die Prüfungsverwaltung erreichen können. '
             + randomizeFunction(questionPossibility);
             
         if (aplHelper.supportsAPL(handlerInput)) {
             return handlerInput.responseBuilder
                 .speak(speechOutput)
-                .reprompt(HELP_REPROMPT)
+                .reprompt(randomizeFunction(questionPossibility))
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     version: '1.1',
@@ -66,12 +64,14 @@ const ExamServiceContactIntentHandler = {
     handle(handlerInput){
         const data = require('./APL/contact_data.json');
         const template = require('./APL/contact_template.json');
-        const speechOutput = ' Sie können die Prüfungsverwaltung per E-Mail. Unter pruefungsverwaltung. @. hs. Bindestrich. worms.de. Oder unter der Telefonnummer 0  6  2  4  1  5  0  9  1  8  1 erreichen. Möchten Sie auch wissen, wie Sie auch Ihre Immatrikulationsbescheinigung bekommen können?';
+        const  speechOutput = speechOutJson[0].examServiceContact + randomizeFunction(questionPossibility);
+        
+        //const speechOutput = ' Sie können die Prüfungsverwaltung per E-Mail. Unter pruefungsverwaltung. @. hs. Bindestrich. worms.de. Oder unter der Telefonnummer 0  6  2  4  1  5  0  9  1  8  1 erreichen. Möchten Sie auch wissen, wie Sie auch Ihre Immatrikulationsbescheinigung bekommen können?';
         
         if (aplHelper.supportsAPL(handlerInput)) {
             return handlerInput.responseBuilder
                 .speak(speechOutput)
-                .reprompt('test')
+                .reprompt(randomizeFunction(questionPossibility))
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
                     version: '1.1',
@@ -86,8 +86,6 @@ const ExamServiceContactIntentHandler = {
 
 
 
-
-
 const skillBuilder = Alexa.SkillBuilders.custom();
 
 exports.handler = skillBuilder
@@ -97,11 +95,13 @@ exports.handler = skillBuilder
         ProcessingTimesOfThesesIntentHandler,
         ConfirmationOfErolmentIntentHandler,
         HelpIntentHandler,
+        RepeatIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
         SessionEndedRequestHandler,
         IntentReflectorHandler
     )
+    .addResponseInterceptors(saveResponseForRepeatingInterceptor)
     .addErrorHandlers(ErrorHandler)
     .withCustomUserAgent('faq_hs_worms/v1.0')
     .lambda();

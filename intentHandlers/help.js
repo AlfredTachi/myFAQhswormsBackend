@@ -1,7 +1,6 @@
 'use strict'
 
 
-
 const HelpIntentHandler = {
     canHandle(handlerInput){
         const res = handlerInput.requestEnvelope.request;
