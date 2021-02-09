@@ -15,7 +15,7 @@ const ConfirmationOfErolmentIntentHandler = {
                 res.intent.name === 'ConfirmationOfErolmentIntent';
     },
     handle(handlerInput){
-        const speechOutput = speechOutJson[0].confirmationOfErolment;
+        const speechOutput = speechOutJson[0].confirmationOfErolment + randomizeFunction(questionPossibility);
 
          return handlerInput.responseBuilder
                 .speak(speechOutput)

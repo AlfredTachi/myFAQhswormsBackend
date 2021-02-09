@@ -14,7 +14,7 @@ const ProcessingTimesOfThesesIntentHandler = {
                 res.intent.name === 'ProcessingTimesOfThesesIntent';
     },
     handle(handlerInput){
-        const speechOutput = speechOutJson[0].processingTimesOfTheses;
+        const speechOutput = speechOutJson[0].processingTimesOfTheses + randomizeFunction(questionPossibility);
 
         return handlerInput.responseBuilder
                 .speak(speechOutput)
