@@ -1,11 +1,10 @@
 'use strict';
 
-const HELP_REPROMPT = 'wie kann ich dir helfen';
-const STOP_MESSAGE = 'FAQ Hochschule Worms wird beendet! Es war großartig, dir zu dienen. Auf Wiederhören!';
-
-
 const fs = require('fs');
 const speechOutJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
+
+var questionPossibility = require('./../constants/questionPossibility.js')
+var randomizeFunction = require('./../constants/randomizeFunction.js');
 
 
 const ConfirmationOfErolmentIntentHandler = {
@@ -20,7 +19,7 @@ const ConfirmationOfErolmentIntentHandler = {
 
          return handlerInput.responseBuilder
                 .speak(speechOutput)
-                .reprompt(HELP_REPROMPT)
+                .reprompt(randomizeFunction(questionPossibility))
                 .getResponse();
     }
 };
