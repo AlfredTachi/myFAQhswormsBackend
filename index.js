@@ -5,7 +5,7 @@ const AWS = require('aws-sdk');
 const fs = require('fs');
 
 const aplHelper = require('./APL/aplHelper.js');
-var questionPossibility = require('./constants/questionPossibility.js')
+var questionPossibility = require('./constants/questionPossibility.js');
 var randomizeFunction = require('./constants/randomizeFunction.js');
 
 const speechOutJson = JSON.parse(fs.readFileSync('assets/data.json', { encoding: 'utf-8' }));
