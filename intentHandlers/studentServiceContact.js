@@ -17,7 +17,7 @@ const StudentServiceContactIntentHandler = {
     },
     handle(handlerInput){
         const data = require('./../APL/contactData.json');
-        const template = require('./../APL/contactTemplate.json');
+        const template = require('./../APL/longTextTemplate.json');
         const  speechOutput = speechOutJson[0].studentServiceContact + randomizeFunction(questionPossibility);
         
         if (aplHelper.supportsAPL(handlerInput)) {

@@ -17,8 +17,8 @@ const ThesesSubmissionIntentHandler = {
     },
     handle(handlerInput){
         
-        const data = require('./../APL/standardData.json');
-        const template = require('./../APL/launchTemplate.json');
+        const data = require('./../APL/thesesSubmissionData.json');
+        const template = require('./../APL/longTextTemplate.json');
         
         const speechOutput = speechOutJson[0].thesesSubmission + randomizeFunction(questionPossibility);
             

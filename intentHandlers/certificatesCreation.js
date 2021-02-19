@@ -17,8 +17,8 @@ const CertificatesCreationIntentHandler = {
     },
     handle(handlerInput){
         
-        const data = require('./../APL/standardData.json');
-        const template = require('./../APL/launchTemplate.json');
+        const data = require('./../APL/creationCertificatData.json');
+        const template = require('./../APL/longTextTemplate.json');
         
         const speechOutput = speechOutJson[0].certificatesCreation + randomizeFunction(questionPossibility);
             
@@ -28,7 +28,7 @@ const CertificatesCreationIntentHandler = {
                 .reprompt(randomizeFunction(questionPossibility))
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
-                    version: '1.1',
+                    version: '1.4',
                     document: template,
                     token: 'FAQsHSwormsToken',
                     datasources: data

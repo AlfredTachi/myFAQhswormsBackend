@@ -22,11 +22,11 @@
                     }
                 ]
             },
-            "title": "Kontakt:",
+            "title": "Antrag auf Erstellung des Zeugnisses",
             "textContent": {
                 "primaryText": {
                     "type": "PlainText",
-                    "text": "<strong>pruefungsverwaltung@hs-worms.de, 06241/509-181 <br><br> studieren@hs-worms.de, 06241/509-180 <br><br> bafoegamt@hs-worms.de, 06241/509-184 oder -309</strong>"
+                    "text": "Der Antrag auf Erstellung Ihres Zeugnisses wird Ihnen auf dem Postweg übermittelt, sobald Sie alle Leistungen im Studium abgeschlossen haben. Bitte übergeben Sie uns den ausgefüllten Antrag auf Zeugniserstellung zusammen mit 4,05 Euro in Briefmarken entweder auf dem Postweg oder per Direkteinwurf in den Außenbriefkasten am M-Gebäude der Hochschule. Die Erstellung des Zeugnisses dauert aufgrund einer Vielzahl von beteiligten Akteuren durchaus ca. 3-4 Wochen, gerade wenn nicht alle beteiligten Akteure regelmäßig an der Hochschule sind. Sollten Sie zwischenzeitlich eine Bescheinigung über den Abschluss des Studiums benötigen, können Sie dies gerne bei den Kolleginnen und Kollegen der Prüfungsverwaltung beantragen."
                 }
             },
             "logoUrl": "https://myfaqsbucket.s3.amazonaws.com/logo-02-ohneBG.png"

@@ -22,11 +22,11 @@
                     }
                 ]
             },
-            "title": "Kontakt:",
+            "title": "Praxissemester oder Abschlussarbeit",
             "textContent": {
                 "primaryText": {
                     "type": "PlainText",
-                    "text": "<strong>pruefungsverwaltung@hs-worms.de, 06241/509-181 <br><br> studieren@hs-worms.de, 06241/509-180 <br><br> bafoegamt@hs-worms.de, 06241/509-184 oder -309</strong>"
+                    "text": "Um Ihre Praxissemester oder Ihre Abschlussarbeit anzumelden, können Sie wie folgt vorgehen. Laden Sie sich das Formular zur Anmeldung eines Praxissemesters oder einer Abschlussarbeit im entsprechenden Moodle-Kure herunter. Füllen Sie das Dokument elektronisch aus und versehen Sie es digital mit Ihrer Unterschrift (alternativ das Dokument ausdrucken, unterschreiben und zur weiteren Bearbeitung wieder einscannen.) Lassen Sie das Formular Ihrer Betreuerin/Ihrem Betreuer zukommen. Diese/ dieser versieht es ebenfalls digital mit ihrer / seiner Unterschrift und leitete das Formular dann an das Fachbereichsdekanat oder das Sekretariat der Studienrichtung zur Vorlage beim Prüfungsausschussvorsitzenden. Sobald der Prüfungsverwaltung das Formular durch den Studiengang vorliegt, wird die Anmeldung systemisch erfasst. Weitere Informationen hierzu erhalten Sie im Sekretariat Ihres Fachbereichs bzw. Ihrer Studienrichtung."
                 }
             },
             "logoUrl": "https://myfaqsbucket.s3.amazonaws.com/logo-02-ohneBG.png"

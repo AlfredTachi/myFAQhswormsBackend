@@ -15,7 +15,7 @@ const ExamServiceContactIntentHandler = {
     },
     handle(handlerInput){
         const data = require('./../APL/contactData.json');
-        const template = require('./../APL/contactTemplate.json');
+        const template = require('./../APL/longTextTemplate.json');
         const  speechOutput = speechOutJson[0].examServiceContact + randomizeFunction(questionPossibility);
         
         if (aplHelper.supportsAPL(handlerInput)) {
@@ -24,7 +24,7 @@ const ExamServiceContactIntentHandler = {
                 .reprompt(randomizeFunction(questionPossibility))
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
-                    version: '1.1',
+                    version: '1.4',
                     document: template,
                     token: 'FAQsHSwormsTokens',
                     datasources: data
