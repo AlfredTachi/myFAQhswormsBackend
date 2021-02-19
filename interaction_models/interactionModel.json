@@ -46,6 +46,8 @@
                     "name": "ExamServiceContactIntent",
                     "slots": [],
                     "samples": [
+                        "Kontakt der Prüfungsverwaltung",
+                        "wie kann ich die Prüfungsverwaltung kontaktieren",
                         "Prüfungsverwaltung",
                         "wie kann ich die Prüfungsverwaltung erreichen"
                     ]
@@ -62,16 +64,22 @@
                     "name": "ProcessingTimesOfThesesIntent",
                     "slots": [],
                     "samples": [
+                        "Bearbeitung von Abschlussarbeiten",
                         "wie lange dauert die Bearbeitung von Abschlussarbeiten"
                     ]
                 },
                 {
                     "name": "ConfirmationOfErolmentIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "Studienbescheinigung",
+                            "type": "StudienBescheinigung"
+                        }
+                    ],
                     "samples": [
-                        "Studienbescheinigung",
-                        "Immatrikulationsbescheinigung",
-                        "wie bekomme ich meine Immatrikulationsbescheinigung"
+                        "wie kann ich meine {Studienbescheinigung} ausdrucken",
+                        "{Studienbescheinigung}",
+                        "wie bekomme ich meine {Studienbescheinigung}"
                     ]
                 },
                 {
@@ -82,6 +90,7 @@
                     "name": "StudentServiceContactIntent",
                     "slots": [],
                     "samples": [
+                        "wie kann ich das Studierendenservice kontaktieren",
                         "wie kann ich das Studierendenservice erreichen",
                         "Studierendenservice",
                         "Wie kann ich Kontakt mit dem Studierendenservice aufnehmen"
@@ -91,6 +100,7 @@
                     "name": "SemesterReregistrationIntent",
                     "slots": [],
                     "samples": [
+                        "wie kann ich mich in das neue Semester zurückmelden",
                         "wie läuft die Rückmeldung in das neue Semester",
                         "Rückmeldung"
                     ]
@@ -108,6 +118,7 @@
                     "name": "CompensationForInternshipSemestersIntent",
                     "slots": [],
                     "samples": [
+                        "Ersatzleistungen für Praxissemester",
                         "Gibt es Ersatzleistungen für Praxissemester"
                     ]
                 },
@@ -115,6 +126,7 @@
                     "name": "HygieneConceptIntent",
                     "slots": [],
                     "samples": [
+                        "Welches Hygienekonzept gibt es an der Hochschule",
                         "Hygienekonzept"
                     ]
                 },
@@ -179,6 +191,7 @@
                     "name": "ExamforWinterToSommerIntent",
                     "slots": [],
                     "samples": [
+                        "abgemeldete Prüfungen",
                         "Kann ich meine abgemeldete Prüfungen im nächsten Semester ablegen"
                     ]
                 },
@@ -200,6 +213,7 @@
                         }
                     ],
                     "samples": [
+                        "{Abschluss} abgeben",
                         "Wie kann ich meine {Abschluss} abgeben"
                     ]
                 },
@@ -263,6 +277,21 @@
                         {
                             "name": {
                                 "value": "Abschlussarbeit"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "StudienBescheinigung",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Immatrikulationsbescheinigung"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Studienbescheinigung"
                             }
                         }
                     ]
