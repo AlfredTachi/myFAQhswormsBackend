@@ -1,5 +1,8 @@
 'use strict'
 
+var questionPossibility = require('./../constants/questionPossibility.js');
+var randomizeFunction = require('./../constants/randomizeFunction.js');
+
 
 const HelpIntentHandler = {
     canHandle(handlerInput){
@@ -9,7 +12,7 @@ const HelpIntentHandler = {
                 res.intent.name === 'AMAZON.HelpIntent';
     },
     handle(handlerInput){
-        const speechOutput = 'Wie kann ich Ihnen helfen';
+        const speechOutput = randomizeFunction(questionPossibility);
 
         return handlerInput.responseBuilder
             .speak(speechOutput)

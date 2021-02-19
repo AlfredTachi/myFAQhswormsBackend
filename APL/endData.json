@@ -1,0 +1,12 @@
+{
+    "launchData": {
+        "properties": {
+            "headerTitle": "Hochschule Worms",
+            "mainText": "Aufwiederhören!",
+            "hintString": "",
+            "logoImage": "https://myfaqsbucket.s3.amazonaws.com/logo-02-ohneBG.png",
+            "backgroundImage": "https://myfaqsbucket.s3.amazonaws.com/background.png",
+            "backgroundOpacity": "0.5"
+        }
+    }
+}

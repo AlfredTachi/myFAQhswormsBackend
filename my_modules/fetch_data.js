@@ -45,9 +45,9 @@ let data = [];
             });
 
             const dataText = JSON.stringify(data, null, 2);
-            fs.writeFileSync('../assets/data.json', dataText);
+            fs.writeFileSync('../assets/dataFromWeb.json', dataText);
         }
-        const dataJson = JSON.parse(fs.readFileSync('../assets/data.json', { encoding: 'utf-8' }));
+        const dataJson = JSON.parse(fs.readFileSync('../assets/dataFromWeb.json', { encoding: 'utf-8' }));
         console.log(dataJson);
     });
 

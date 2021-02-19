@@ -1,0 +1,302 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "faq hochschule worms",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "yes",
+                        "jo",
+                        "jep",
+                        "ja"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "no",
+                        "nee",
+                        "nein"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "schliessen",
+                        "verlassen",
+                        "stop",
+                        "ende"
+                    ]
+                },
+                {
+                    "name": "ExamServiceContactIntent",
+                    "slots": [],
+                    "samples": [
+                        "Kontakt der Prüfungsverwaltung",
+                        "wie kann ich die Prüfungsverwaltung kontaktieren",
+                        "Prüfungsverwaltung",
+                        "wie kann ich die Prüfungsverwaltung erreichen"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ProcessingTimesOfThesesIntent",
+                    "slots": [],
+                    "samples": [
+                        "Bearbeitung von Abschlussarbeiten",
+                        "wie lange dauert die Bearbeitung von Abschlussarbeiten"
+                    ]
+                },
+                {
+                    "name": "ConfirmationOfErolmentIntent",
+                    "slots": [
+                        {
+                            "name": "Studienbescheinigung",
+                            "type": "StudienBescheinigung"
+                        }
+                    ],
+                    "samples": [
+                        "wie kann ich meine {Studienbescheinigung} ausdrucken",
+                        "{Studienbescheinigung}",
+                        "wie bekomme ich meine {Studienbescheinigung}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "StudentServiceContactIntent",
+                    "slots": [],
+                    "samples": [
+                        "wie kann ich das Studierendenservice kontaktieren",
+                        "wie kann ich das Studierendenservice erreichen",
+                        "Studierendenservice",
+                        "Wie kann ich Kontakt mit dem Studierendenservice aufnehmen"
+                    ]
+                },
+                {
+                    "name": "SemesterReregistrationIntent",
+                    "slots": [],
+                    "samples": [
+                        "wie kann ich mich in das neue Semester zurückmelden",
+                        "wie läuft die Rückmeldung in das neue Semester",
+                        "Rückmeldung"
+                    ]
+                },
+                {
+                    "name": "ExamReviewsIntent",
+                    "slots": [],
+                    "samples": [
+                        "Wer ist für die Klausureinsicht zuständig",
+                        "Klausureinsicht",
+                        "Informationen über die Klausureinsicht"
+                    ]
+                },
+                {
+                    "name": "CompensationForInternshipSemestersIntent",
+                    "slots": [],
+                    "samples": [
+                        "Ersatzleistungen für Praxissemester",
+                        "Gibt es Ersatzleistungen für Praxissemester"
+                    ]
+                },
+                {
+                    "name": "HygieneConceptIntent",
+                    "slots": [],
+                    "samples": [
+                        "Welches Hygienekonzept gibt es an der Hochschule",
+                        "Hygienekonzept"
+                    ]
+                },
+                {
+                    "name": "InfoToFuenfZehnKmRegelIntent",
+                    "slots": [],
+                    "samples": [
+                        "Gilt auch die fünfzehn Kilometer Regelung für die Teilnahme an Präsenzklausuren",
+                        "fünfzehn Kilometer Regelung"
+                    ]
+                },
+                {
+                    "name": "RegistrationOfInternshipSemestersOrTheseIntent",
+                    "slots": [
+                        {
+                            "name": "IntershipOrThese",
+                            "type": "IntershipOrThese"
+                        }
+                    ],
+                    "samples": [
+                        "wie läuft die Anmeldung von {IntershipOrThese}",
+                        "Anmeldung {IntershipOrThese}",
+                        "Wie kann ich mein {IntershipOrThese} anmelden"
+                    ]
+                },
+                {
+                    "name": "CertificatesCreationIntent",
+                    "slots": [],
+                    "samples": [
+                        "wie bekomme ich mein Bachelorzeugnis",
+                        "Bachelorzeugnis",
+                        "Zeugnis beantragen",
+                        "Wie läuft den Antrag auf die Erstellung von Zeugnisses"
+                    ]
+                },
+                {
+                    "name": "StudentIdValidationIntent",
+                    "slots": [],
+                    "samples": [
+                        "Studierendenausweis aktualisieren",
+                        "Wo kann man sein Studierendenausweis aktualisieren"
+                    ]
+                },
+                {
+                    "name": "NewStudentIdCardIntent",
+                    "slots": [],
+                    "samples": [
+                        "mein Studierendausweis ist verloren gegangen",
+                        "neuer Studierendausweis",
+                        "Wo kann ich einen neuen Studierendausweis beantragen"
+                    ]
+                },
+                {
+                    "name": "EquivalenceOfStudentIdIntent",
+                    "slots": [],
+                    "samples": [
+                        "wie kann ich mich als Student ohne Studierendenausweis nachweisen",
+                        "Studierendenausweis Equivalenz"
+                    ]
+                },
+                {
+                    "name": "ExamforWinterToSommerIntent",
+                    "slots": [],
+                    "samples": [
+                        "abgemeldete Prüfungen",
+                        "Kann ich meine abgemeldete Prüfungen im nächsten Semester ablegen"
+                    ]
+                },
+                {
+                    "name": "CertificateToDriveToWormsExaminationPhaseIntent",
+                    "slots": [],
+                    "samples": [
+                        "Passierschein",
+                        "Prüfungen in corona zeit",
+                        "kann man in der Prüfungsphase trotz Lockdown nach Worms fahren"
+                    ]
+                },
+                {
+                    "name": "ThesesSubmissionIntent",
+                    "slots": [
+                        {
+                            "name": "Abschluss",
+                            "type": "Abschluss"
+                        }
+                    ],
+                    "samples": [
+                        "{Abschluss} abgeben",
+                        "Wie kann ich meine {Abschluss} abgeben"
+                    ]
+                },
+                {
+                    "name": "ProcedureForExaminationRegulationsExpireAtTheEndOfWiSeIntent",
+                    "slots": [],
+                    "samples": [
+                        "was soll ich machen wenn meine Prüfungsordnungabgelaufen ist",
+                        "was passiert wenn meine Prüfungsordnung abgelaufen ist",
+                        "meine Prüfungsordnung ist abgelaufen"
+                    ]
+                },
+                {
+                    "name": "NormalPeriodOfStudyIntent",
+                    "slots": [],
+                    "samples": [
+                        "Regelstudienzeit",
+                        "sag mir etwas über Regelstudienzeit"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "IntershipOrThese",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Bachelorarbeit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Abschlussarbeit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Praktikum"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Praxissemester"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Abschluss",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Masterarbeit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bachelorarbeit"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Abschlussarbeit"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "StudienBescheinigung",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Immatrikulationsbescheinigung"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Studienbescheinigung"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

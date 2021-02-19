@@ -22,11 +22,11 @@
                     }
                 ]
             },
-            "title": "Kontakt:",
+            "title": "Regelstudienzeit",
             "textContent": {
                 "primaryText": {
                     "type": "PlainText",
-                    "text": "<strong>pruefungsverwaltung@hs-worms.de, 06241/509-181 <br><br> studieren@hs-worms.de, 06241/509-180 <br><br> bafoegamt@hs-worms.de, 06241/509-184 oder -309</strong>"
+                    "text": "Mit der Verabschiedung des neuen Hochschulgesetzes wurde vom Landtag Rheinland-Pfalz festgelegt, dass für alle im Sommersemester 2020 in einem Studiengang des Landes Rheinland-Pfalz eingeschriebenen und nicht beurlaubten Studierenden eine von der Regelstudienzeit abweichende um ein Semester verlängerte individuelle Regelstudienzeit gilt. Was bedeutet das für Sie? Studieren Sie also im Studiengang Handelsmanagement, der laut Prüfungsordnung eine Regelstudienzeit von 6 Semestern hat, und waren Sie in diesem Studiengang im Sommersemester 2020 eingeschrieben und nicht beurlaubt, so wird Ihre Regelstudienzeit um ein Semester auf 7 Semester verlängert. Gemäß einer Pressemitteilung des Ministeriums für Wissenschaft, Weiterbildung und Kultur vom 21.12.2020, wird auch das Wintersemester 2020/2021 als „Null-Semester“ gewertet."
                 }
             },
             "logoUrl": "https://myfaqsbucket.s3.amazonaws.com/logo-02-ohneBG.png"
