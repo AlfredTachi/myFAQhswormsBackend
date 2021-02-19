@@ -28,7 +28,7 @@ const CertificatesCreationIntentHandler = {
                 .reprompt(randomizeFunction(questionPossibility))
                 .addDirective({
                     type: 'Alexa.Presentation.APL.RenderDocument',
-                    version: '1.4',
+                    version: '1.1',
                     document: template,
                     token: 'FAQsHSwormsToken',
                     datasources: data
