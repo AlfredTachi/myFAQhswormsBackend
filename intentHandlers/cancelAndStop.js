@@ -28,6 +28,7 @@ const CancelAndStopIntentHandler = {
                     token: 'FAQsHSwormsToken',
                     datasources: data
                 })
+                .withShouldEndSession(true)
                 .getResponse();
         }
     }
